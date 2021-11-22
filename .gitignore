@@ -112,3 +112,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# hiragana-dataset-master
+hiragana-dataset-master/*
