@@ -2,7 +2,7 @@
 In this project, the training set of 1405 images are split into 1124 (training data) and 281 (testing data). A CNN model is constructed to train on the 800 images, and the trained model is then validated by the testing data. The trained model is saved as `model_hiragana_recognition_cnn.h5`.
 
 The 1000 images of the dataset come from Matheus Inoue's [hirgana-dataset](https://github.com/inoueMashuu/hiragana-dataset) on his Github repository.
-The other 405 images come from my friend Wishyut Pitawanik. Please take a look at `./handwriting_wishyut`.
+The other 405 images come from my friend Wishyut. Please take a look at `./handwriting_wishyut`.
 
 The dataset contains 1405 images, each of them having a handwritten Hiragana character. There are total 50 Hiragana characters, each character corresponding to 20-29 images.
 
