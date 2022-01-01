@@ -1,5 +1,5 @@
 # Nihongo Hiragana Ricognition
-In this project, the training set of 1405 images are split into 1124 (training data) and 281 (testing data). A CNN model is constructed to train on the 800 images, and the trained model is then validated by the testing data. The trained model is saved as `model_hiragana_recognition_cnn.h5`.
+In this project, the training set of 1405 images are split into *1124 (training data)* and *281 (testing data)*. A CNN model is constructed to train on the 800 images, and the trained model is then validated by the testing data. The trained model is saved as `model_hiragana_recognition_cnn.h5`.
 
 The 1000 images of the dataset come from Matheus Inoue's [hirgana-dataset](https://github.com/inoueMashuu/hiragana-dataset) on his Github repository.
 The other 405 images come from my friend Wishyut. Please take a look at `./handwriting_wishyut`.
@@ -8,9 +8,9 @@ The dataset contains 1405 images, each of them having a handwritten Hiragana cha
 
 
 ## Results
-The trained model is tested by 281 testing data, obtaining 97% accuracy for 281 testing data.
+The trained model is tested by *281 testing data*, obtaining 97% accuracy for 281 testing data.
 
-The trained model is then tested by 92 handwritings of my own, reaching 83% accuracy. Please take a look at `./test_my_handwriting`.
+The trained model is then tested by 92 handwritten Hiraganas of my own, reaching 83% accuracy. Please take a look at `./test_my_handwriting`.
 
 
 ## Modules used
@@ -36,4 +36,4 @@ Internal modules used:
         * The CNN model consists of two convolution blocks and two dense layers, each convolution block containing two convolution layers and a maxpooling layer.
     * Plots the confusion matrix and the wrong predictions with `pyplot`.
 * `model_hiragana_recognition_cnn.h5`: Saved model trained in `hiragana_recognition.ipynb`.
-* `test_loadmodel.ipynb`: Loads `model_hiragana_recognition_cnn.h5` and certifies that it can be used on recognizing Hiragana handwritings.
+* `test_loadmodel.ipynb`: Loads `model_hiragana_recognition_cnn.h5` and certifies that it can be used on recognizing handwritten Hiraganas.
