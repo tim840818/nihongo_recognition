@@ -1,9 +1,12 @@
 # Nihongo Hiragana Ricognition
-In this project, the training set of 1000 images are split into 800 (training data) and 200 (testing data). A CNN model is constructed to train on the 800 images, and the trained model is then validated by the testing data. The trained model is saved as `model_hiragana_recognition_cnn.h5`, obtaining 99.5% accuracy for 200 testing data.
+In this project, the training set of 1405 images are split into 1124 (training data) and 281 (testing data). A CNN model is constructed to train on the 800 images, and the trained model is then validated by the testing data. The trained model is saved as `model_hiragana_recognition_cnn.h5`, obtaining 97% accuracy for 281 testing data.
 
+The trained model is then tested by 92 handwritings of my own, reaching 83% accuracy. Please take a look at `./test_my_handwriting`.
 
-The dataset comes from Matheus Inoue's [hirgana-dataset](https://github.com/inoueMashuu/hiragana-dataset) on his Github repository. All the data trained in this model are from his dataset.
-The dataset contains 1000 images, each of them having a handwritten Hiragana character. There are total 50 Hiragana characters, each character corresponding to 20 images.
+The 1000 images of the dataset come from Matheus Inoue's [hirgana-dataset](https://github.com/inoueMashuu/hiragana-dataset) on his Github repository.
+The other 405 images come from my friend Wishyut Pitawanik. Please take a look at `./handwriting_wishyut`.
+
+The dataset contains 1405 images, each of them having a handwritten Hiragana character. There are total 50 Hiragana characters, each character corresponding to 20-29 images.
 
 ## Modules used
 
@@ -21,8 +24,11 @@ Internal modules used:
 
 ## Programs  included
 * `hiragana_recognition.ipynb`: 
-    * Preprocesses data and extracts "Romanji labels" using `os`, `re`, `numpy`, `pandas`, `cv2`, `sklearn`. 
-    * Augments training data via `ImageDataGenerator` and trains the CNN model by `keras`. 
-    * Plots the results with `pyplot`.
-* `hiragana_recognition.py`: Same code as `hiragana_recognition.ipynb` but re-organized.
-* `model_hiragana_recognition_cnn.h5`: Saved model trained in `hiragana_recognition.ipynb` and compressed as `model_hiragana_recognition_cnn.zip`.
+    * Preprocesses data and extracts "Romanji labels" using `os`, `re`, `numpy`, `pandas`, `cv2`, `sklearn`.
+    * Preprocesses images, eliminates noises using `cv2`.
+    * Augments training data via `ImageDataGenerator`
+    * Trains the CNN model by `keras`. 
+        * The CNN model consists of two convolution blocks and two dense layers, each convolution block containing two convolution layers and a maxpooling layer.
+    * Plots the confusion matrix and the wrong predictions with `pyplot`.
+* `model_hiragana_recognition_cnn.h5`: Saved model trained in `hiragana_recognition.ipynb`.
+* `test_loadmodel.ipynb`: Loads `model_hiragana_recognition_cnn.h5` and certifies that it can be used on recognizing Hiragana handwritings.
