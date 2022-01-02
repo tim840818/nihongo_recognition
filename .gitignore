@@ -122,5 +122,6 @@ hiragana-dataset-master/*
 # ppts
 *.odp*
 *.ppt*
+fig_ppts/
 
 # other stuffs
