@@ -118,3 +118,9 @@ hiragana-dataset-master/*
 
 # beta files
 *beta*
+
+# ppts
+*.odp
+*.ppt
+
+# other stuffs
