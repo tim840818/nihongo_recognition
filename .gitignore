@@ -120,7 +120,7 @@ hiragana-dataset-master/*
 *beta*
 
 # ppts
-*.odp
-*.ppt
+*.odp*
+*.ppt*
 
 # other stuffs
