@@ -33,7 +33,7 @@ Internal modules used:
     * Preprocesses images, eliminates noises using `cv2`.
     * Augments training data via `ImageDataGenerator`.
     * Trains the CNN model by `keras`. 
-        * The CNN model consists of two convolution blocks and two dense layers, each convolution block containing two convolution layers and a maxpooling layer.
+        * The CNN model consists of two convolution blocks and one dense layer, each convolution block containing two convolution layers and a maxpooling layer.
     * Plots the confusion matrix and the wrong predictions with `pyplot`.
 * `model_hiragana_recognition_cnn.h5`: Saved model trained in `hiragana_recognition.ipynb`.
 * `test_loadmodel.ipynb`: Loads `model_hiragana_recognition_cnn.h5` and certifies that it can be used on recognizing handwritten Hiraganas.
