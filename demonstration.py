@@ -1,7 +1,28 @@
 import itertools
-from matplotlib import pyplot as plt
 import numpy as np
+from matplotlib import pyplot as plt
+from matplotlib.ticker import MaxNLocator
 
+def plot_train_history(train_history):
+    plt.figure(figsize=(18,4))
+    plt.suptitle('CNN train history', fontsize=18)
+
+    ax1 = plt.subplot(1, 2, 1)
+    plt.ylabel('Accuracy', fontsize=12)
+    plt.xlabel('Number of iterations', fontsize=12)
+    plt.plot(train_history.history['accuracy'], color='b', label='Training Accuracy')
+    plt.plot(train_history.history['val_accuracy'], color='r', label='Validation Accuracy')
+    ax1.xaxis.set_major_locator(MaxNLocator(integer=True))
+    plt.legend(loc='lower right')
+
+    ax2 = plt.subplot(1, 2, 2)
+    plt.ylabel('Loss', fontsize=12)
+    plt.xlabel('Number of iterations', fontsize=12)
+    plt.plot(train_history.history['loss'], color='b', label='Training Loss')
+    plt.plot(train_history.history['val_loss'], color='r', label='Validation Loss')
+    ax2.xaxis.set_major_locator(MaxNLocator(integer=True))
+    plt.legend(loc='upper right')
+    plt.show()
 
 def get_predictions(X_test, model):
     prob = model.predict(X_test)
