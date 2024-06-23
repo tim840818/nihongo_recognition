@@ -128,5 +128,5 @@ fig_ppts/
 old.py
 requirements.yml
 *.h5
-Hiragana-Recognition.pdf
-Hiragana-Recognition.odp
+*.pdf
+*.odp
