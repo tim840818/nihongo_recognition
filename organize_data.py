@@ -1,5 +1,5 @@
 import os, requests, zipfile
-
+import numpy as np
 import re
 import pandas as pd
 import cv2 as cv
@@ -23,8 +23,7 @@ def download_hiragana_dataset():
 
         os.remove(filename)
 
-## extract the romanji from a filename
-def get_romanji(filename):
+def get_romanji(filename): ## extract the romanji from a filename
     keyword = re.search(r'kana(\w+?)\d+', filename).group(1)
     return keyword.lower()
 
@@ -56,3 +55,20 @@ def get_handwriting_wishyut():
 def std_X(X):
     X = X.astype('float32') / 255
     return X
+
+def load_my_handwritings(img_rows=IMG_SIZE[0], img_cols=IMG_SIZE[1]):
+    my_handwritings = []
+    answers_myhw = []
+    img_rows, img_cols = IMG_SIZE
+
+    for file in os.listdir("test_my_handwriting"):
+        key = re.search(r'_(\w+?)_', file).group(1)
+        answers_myhw.append(key)
+        
+        img = cv.imread(f"test_my_handwriting/{file}", cv.IMREAD_GRAYSCALE)
+        img = 255 - img
+        img = im_reshape(im_bin(img), img_rows, img_cols)
+        my_handwritings.append(img)
+
+    my_handwritings = np.array(my_handwritings)
+    return my_handwritings, answers_myhw

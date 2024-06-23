@@ -1,4 +1,5 @@
 import itertools
+import math
 import numpy as np
 from matplotlib import pyplot as plt
 from matplotlib.ticker import MaxNLocator
@@ -29,7 +30,7 @@ def get_predictions(X_test, model):
     predictions = np.argmax(prob,axis=1)
     return predictions
 
-def show_errs(X_test, predictions, ground_truth, category_dict):
+def show_errs(X_test, predictions, ground_truth, category_dict, show_all=False):
     inv_category_dict = {v:k for k,v in category_dict.items()} # invert the category dictionary (index -> readable label)
 
     nVal = len(predictions)
@@ -42,7 +43,7 @@ def show_errs(X_test, predictions, ground_truth, category_dict):
     print("Accuracy: {:.2f}".format(1-num_err/nVal))
 
     num_eachrow = 4
-    rows_err = 2 #math.ceil(num_err / num_eachrow)
+    rows_err = math.ceil(num_err / num_eachrow) if show_all else 2
     fig, axes = plt.subplots(rows_err, num_eachrow, figsize=(8*num_eachrow,8*rows_err))
 
     for r in range(rows_err):
@@ -54,7 +55,7 @@ def show_errs(X_test, predictions, ground_truth, category_dict):
             axes[r,c].set_title(f"predicted: {inv_category_dict[predictions[pos_err]]}, answer: {inv_category_dict[ground_truth[pos_err]]}", fontsize=18)
             axes[r,c].imshow(X_test[pos_err], cmap=plt.get_cmap('gray'))
 
-def plot_confusion_matrix(M, category_dict, title='Confusion matrix', show_all=False, normalize=False, cmap=plt.cm.Blues, figsize=(20,20)):
+def plot_confusion_matrix(M, category_dict, title='Confusion matrix', show_all=False, normalize=False, cmap=plt.cm.Blues, figsize=(10,10)):
     ## normalize option
     if normalize:
         M = M.astype('float') / M.sum(axis=1)[:, np.newaxis]

@@ -125,3 +125,8 @@ hiragana-dataset-master/*
 fig_ppts/
 
 # other stuffs
+old.py
+requirements.yml
+*.h5
+Hiragana-Recognition.pdf
+Hiragana-Recognition.odp
