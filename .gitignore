@@ -125,7 +125,8 @@ hiragana-dataset-master/*
 fig_ppts/
 
 # other stuffs
-*old*
+old
+others
 requirements.yml
 *.h5
 *.pdf
