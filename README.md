@@ -16,8 +16,8 @@ The training set of 1405 images are split into training data and testing data in
 
 The trained model is then evaluated by the testing data (total 211 images split from the data). A 5-fold cross validation test is further constructed from the training data to test the integrity of the model.
 
-![Image preprocessing](figures/romanji1.png){ width="100px" }
-![CNN structure](figures/romanji2.png){ width="100px" }
+![Image preprocessing](figures/romanji1.png)
+![CNN structure](figures/romanji2.png)
 
 
 ## Results
