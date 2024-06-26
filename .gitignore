@@ -128,6 +128,7 @@ fig_ppts/
 *.h5
 *.pdf
 *.odp
+*doggy*
 
 old
 others
