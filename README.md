@@ -1,31 +1,31 @@
 # Nihongo Hiragana Recognition
-The goal of the project is to train a model that can recognize various Hiragana handwritten images. A convolutional neural network (CNN) model is trained, giving $97%$ accuracy and $0.97$ f1 score. Please refer to `hiragana_recognition.ipynb` for the demonstration.
+This project trains convolutional neural networks (CNNs) model to recognize various Hiragana handwritten images, giving a $97\%$ accuracy and $0.97$ F1 score. Please refer to `hiragana_recognition.ipynb` for the demonstration.
 
 
 ## Data sources
 The 1000 images of the dataset come from Matheus Inoue's [hirgana-dataset](https://github.com/inoueMashuu/hiragana-dataset) on his Github repository.
-The other 405 images come from my friend Wishyut. Please take a look at `./handwriting_wishyut`.
+An additional 405 images are provided to increase the dataset size and variety and are stored in `./handwriting_wishyut`.
 
-The dataset contains 1405 images, each of them having a handwritten Hiragana character. There are total 50 Hiragana characters, each character corresponding to 20-29 images.
+The dataset thus contains 1405 images, each of them containing a handwritten Hiragana character. There are total 50 Hiragana characters, with each character corresponding to 20-29 images.
 
 
 ## Methodology
 The images are imported and preprocessed using `cv2`.
 
-The training set of 1405 images are split into training data and testing data in the ratio of 85:15. The traing data is further split into trainging set and validation set. A CNN model is constructed to train on the training set and be validated by the validation set. The CNN model consists of two convolution blocks and one dense layer, each convolution block containing two convolution layers and a maxpooling layer.
+The training set of 1405 images is split into training data and testing data with a 85:15 ratio. The training data is further split into trainging set and validation set. A CNN model is constructed to train on the training set and be validated by the validation set. The CNN model consists of two convolution blocks and one dense layer, each convolution block containing two convolution layers and a maxpooling layer.
 
-The trained model is then evaluated by the testing data (total 211 images split from the data). A 5-fold cross validation test is further constructed from the training data to test the integrity of the model.
+The trained model is then evaluated on the testing data (total 211 images split from the data). A 5-fold cross validation test is further constructed from the training data to test the integrity of the model.
 
 ![Image preprocessing](figures/romanji1.png)
 ![CNN structure](figures/romanji2.png)
 
 
 ## Results
-Among the five trained cross validation models, the f1 score mean is $0.96$ with standard deviation of $0.02$, proving the good integrity of the model.
+Among the five trained cross validation models, the F1 score mean is $0.96$ with standard deviation of $0.02$, proving the good integrity of the model.
 
-The final trained model is selected by the model of the five validation models with the lowest cost. Evaluated by the testing data, it reaches $97%$ accuracy and $0.97$ f1 score.
+The final trained model is selected by the model of the five validation models with the lowest cost. Evaluated by the testing data, it reaches $97\%$ accuracy and $0.97$ F1 score.
 
-The model is then tested by 92 handwritten Hiraganas of my own, reaching 77% accuracy. Please take a look at `./test_my_handwriting`.
+The model is then tested by 92 handwritten Hiragana images of my own, reaching $77\%$ accuracy. Please take a look at `./test_my_handwriting`.
 
 
 ## Modules used
