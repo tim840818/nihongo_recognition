@@ -125,9 +125,12 @@ hiragana-dataset-master/*
 fig_ppts/
 
 # other stuffs
-old
-others
-requirements.yml
 *.h5
 *.pdf
 *.odp
+
+old
+others
+figures
+requirements.yml
+image_process.ipynb
