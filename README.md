@@ -10,15 +10,19 @@ The dataset contains 1405 images, each of them having a handwritten Hiragana cha
 
 
 ## Methodology
+The images are imported and preprocessed using `cv2`.
+
 The training set of 1405 images are split into training data and testing data in the ratio of 85:15. The traing data is further split into trainging set and validation set. A CNN model is constructed to train on the training set and be validated by the validation set. The CNN model consists of two convolution blocks and one dense layer, each convolution block containing two convolution layers and a maxpooling layer.
 
 The trained model is then evaluated by the testing data (total 211 images split from the data). A 5-fold cross validation test is further constructed from the training data to test the integrity of the model.
 
+![Image preprocessing](figures/romanji1.png)
+![CNN structure](figures/romanji2.png)
 
 ## Results
 Among the five trained cross validation models, the f1 score mean is $0.96$ with standard deviation of $0.02$, proving the good integrity of the model.
 
-The final trained model is selected by the model of the five validation models with the lowest cost. Evaluated by the testing data. It reaches $97%$ accuracy and $0.97$ f1 score.
+The final trained model is selected by the model of the five validation models with the lowest cost. Evaluated by the testing data, it reaches $97%$ accuracy and $0.97$ f1 score.
 
 The model is then tested by 92 handwritten Hiraganas of my own, reaching 77% accuracy. Please take a look at `./test_my_handwriting`.
 
@@ -27,7 +31,7 @@ The model is then tested by 92 handwritten Hiraganas of my own, reaching 77% acc
 External libraries used:
 * `numpy`: Calculates and manipulates matrices (images)
 * `pandas`: Constructs a datatable to organize and manipulate all data
-* `cv2`: Reads images into 2-D arrays
+* `cv2`: Reads and preprocesses images
 * `matplotlib`: Plots images with `pyplot`
 * `sklearn`: Splits and shuffles data into training and testing by `model_selection.train_test_split`
 * `tensorflow.keras`: Augments training data by `preprocessing.image.ImageDataGenerator`. Categorizes data in one-hot encoding by `utils.np_utils`. Constructs a CNN model by `models`, `layers`.

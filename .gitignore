@@ -131,6 +131,8 @@ fig_ppts/
 
 old
 others
-figures
+# figures
+
 requirements.yml
 image_process.ipynb
+romanji3.png
