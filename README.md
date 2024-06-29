@@ -1,5 +1,5 @@
 # Nihongo Hiragana Recognition
-This project trains convolutional neural networks (CNNs) model to recognize various Hiragana handwritten images, giving a $97\%$ accuracy and $0.97$ F1 score. Please refer to `hiragana_recognition.ipynb` for the demonstration.
+This project trains convolutional neural networks (CNNs) model to recognize various Hiragana handwritten images, giving a 97\% accuracy and 0.97 F1 score. Please refer to `hiragana_recognition.ipynb` for the demonstration.
 
 
 ## Data sources
@@ -21,11 +21,11 @@ The trained model is then evaluated on the testing data (total 211 images split 
 
 
 ## Results
-Among the five trained cross validation models, the F1 score mean is $0.96$ with standard deviation of $0.02$, proving the good integrity of the model.
+Among the five trained cross validation models, the F1 score mean is 0.96 with standard deviation of 0.02, proving the good integrity of the model.
 
-The final trained model is selected by the model of the five validation models with the lowest cost. Evaluated by the testing data, it reaches $97\%$ accuracy and $0.97$ F1 score.
+The final trained model is selected by the model of the five validation models with the lowest cost. Evaluated by the testing data, it reaches 97\% accuracy and 0.97 F1 score.
 
-The model is then tested by 92 handwritten Hiragana images of my own, reaching $77\%$ accuracy. Please take a look at `./test_my_handwriting`.
+The model is then tested by 92 handwritten Hiragana images of my own, reaching 77\% accuracy. Plese tke a look at `./test_my_handwriting`.
 
 
 ## Modules used
